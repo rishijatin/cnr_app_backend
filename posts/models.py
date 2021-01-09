@@ -1,7 +1,6 @@
 from django.db import models
 
 
-# Create your models here.
 class Category(models.Model):
     name = models.CharField(max_length=15, unique=True)
     image_url = models.URLField()
@@ -9,6 +8,9 @@ class Category(models.Model):
     class Meta:
         ordering = ['name']
         verbose_name_plural = "Categories"
+
+    def __str__(self):
+        return f'{self.id}:{self.name}'
 
 
 class BlogPost(models.Model):
@@ -22,3 +24,6 @@ class BlogPost(models.Model):
 
     class Meta:
         ordering = ['-date_added']
+
+    def __str__(self):
+        return f'{self.id}:{self.heading}'
