@@ -1,0 +1,1 @@
+web: gunicorn cnr_app_backend.wsgi
