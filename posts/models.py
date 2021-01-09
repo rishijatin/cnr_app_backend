@@ -10,7 +10,7 @@ class Category(models.Model):
         verbose_name_plural = "Categories"
 
     def __str__(self):
-        return f'{self.id}:{self.name}'
+        return f'{self.id}: {self.name}'
 
 
 class BlogPost(models.Model):
@@ -26,4 +26,4 @@ class BlogPost(models.Model):
         ordering = ['-date_added']
 
     def __str__(self):
-        return f'{self.id}:{self.heading}'
+        return f'{self.id}: {self.heading}'
