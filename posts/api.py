@@ -34,9 +34,11 @@ class BlogPostList(ListAPIView):
 
     def get(self, request, *args, **kwargs):
         queryset = self.get_queryset()
-        page = self.paginate_queryset(queryset)
-        serializer = BlogPostListSerializer(page, many=True)
-        return self.get_paginated_response(serializer.data)
+        # page = self.paginate_queryset(queryset)
+        # serializer = BlogPostListSerializer(page, many=True)
+        # return self.get_paginated_response(serializer.data)
+        serializer = BlogPostListSerializer(queryset,many=True)
+        return Response(serializer.data)
 
 
 class BlogPostDetail(ListAPIView):

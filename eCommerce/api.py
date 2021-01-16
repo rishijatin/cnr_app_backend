@@ -33,9 +33,11 @@ class ItemListView(ListAPIView):
 
     def get(self, request, *args, **kwargs):
         queryset = self.get_queryset()
-        page = self.paginate_queryset(queryset)
-        serializer = ItemListSerializer(page, many=True)
-        return self.get_paginated_response(serializer.data)
+        # page = self.paginate_queryset(queryset)
+        # serializer = ItemListSerializer(page, many=True)
+        # return self.get_paginated_response(serializer.data)
+        serializer = ItemListSerializer(queryset,many=True)
+        return Response(serializer.data)
 
 
 class ItemDetailView(ListAPIView):
