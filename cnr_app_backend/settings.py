@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'posts',
     'health',
+    'AboutPerson',
     'eCommerce',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

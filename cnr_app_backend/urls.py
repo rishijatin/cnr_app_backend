@@ -21,4 +21,5 @@ urlpatterns = [
     path('categories/', include('posts.urls')),
     path('eCommerce/', include('eCommerce.urls')),
     path('eHealth/', include('health.urls')),
+    path('about/', include('AboutPerson.urls')),
 ]
