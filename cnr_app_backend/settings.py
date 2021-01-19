@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'rest_framework',
     'posts',
+    'health',
     'eCommerce',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
