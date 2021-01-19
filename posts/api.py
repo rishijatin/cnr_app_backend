@@ -27,18 +27,30 @@ class BlogPostList(ListAPIView):
     lookup_url_kwarg = "category_id"
     pagination_class = CustomPaginator
 
+    def get_category_name(self):
+        category_id = self.kwargs.get(self.lookup_url_kwarg)
+        category_name = Category.objects.get(id=category_id)
+        return category_name.description
+
     def get_queryset(self):
         category_id = self.kwargs.get(self.lookup_url_kwarg)
         posts = BlogPost.objects.filter(category=category_id)
+
         return posts
 
     def get(self, request, *args, **kwargs):
         queryset = self.get_queryset()
+
         # page = self.paginate_queryset(queryset)
         # serializer = BlogPostListSerializer(page, many=True)
         # return self.get_paginated_response(serializer.data)
-        serializer = BlogPostListSerializer(queryset,many=True)
-        return Response(serializer.data)
+        serializer = BlogPostListSerializer(queryset, many=True)
+
+        new_serializer = {
+            "description": self.get_category_name(),
+            "posts": serializer.data
+        }
+        return Response(new_serializer)
 
 
 class BlogPostDetail(ListAPIView):

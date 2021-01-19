@@ -3,10 +3,11 @@ from django.db import models
 
 class Category(models.Model):
     name = models.CharField(max_length=15, unique=True)
+    description = models.TextField(null=True)
     image_url = models.URLField()
 
     class Meta:
-        ordering = ['name']
+        ordering = ['id']
         verbose_name_plural = "Categories"
 
     def __str__(self):
