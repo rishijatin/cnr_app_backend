@@ -5,9 +5,10 @@ class Category(models.Model):
     name = models.CharField(max_length=15, unique=True)
     description = models.TextField(null=True)
     image_url = models.URLField()
+    position = models.IntegerField(default=0)
 
     class Meta:
-        ordering = ['id']
+        ordering = ['position']
         verbose_name_plural = "Categories"
 
     def __str__(self):
