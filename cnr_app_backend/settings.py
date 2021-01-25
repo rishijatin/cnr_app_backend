@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'health',
     'AboutPerson',
     'eCommerce',
+    'contact',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',

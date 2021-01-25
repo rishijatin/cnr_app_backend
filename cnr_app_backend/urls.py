@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from contact.api import ContactView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -22,4 +23,5 @@ urlpatterns = [
     path('eCommerce/', include('eCommerce.urls')),
     path('eHealth/', include('health.urls')),
     path('about/', include('AboutPerson.urls')),
+    path('contact/', ContactView.as_view()),
 ]
