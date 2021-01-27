@@ -18,7 +18,7 @@ class Item(models.Model):
     small_image_url = models.URLField()
     large_image_url = models.URLField()
     website_url = models.URLField()
-    price = models.IntegerField()
+    price = models.CharField(max_length=50,blank=True)
     description = models.TextField()
 
     def __str__(self):
