@@ -14,7 +14,7 @@ class Category(models.Model):
 
 class Item(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    name = models.CharField(max_length=14)
+    name = models.CharField(max_length=30)
     small_image_url = models.URLField()
     large_image_url = models.URLField()
     website_url = models.URLField()
