@@ -23,3 +23,11 @@ class Item(models.Model):
 
     def __str__(self):
         return f'{self.id}: {self.name}'
+
+
+class PhotoItem(models.Model):
+    url = models.URLField()
+    item = models.ForeignKey(Item, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.id}-{self.url}'
