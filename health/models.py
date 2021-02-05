@@ -28,5 +28,12 @@ class Doctor(models.Model):
     def __str__(self):
         return f'{self.id} - {self.doctor_name}'
 
-    class Photos(models.Model):
-        doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, related_name='photos')
+class Photos(models.Model):
+        url = models.URLField()
+        doctor = models.ForeignKey(Doctor,on_delete=models.CASCADE,related_name='photos')
+
+        class Meta:
+            verbose_name_plural = 'Photos'
+
+        def __str__(self):
+            return f'{self.id}-{self.doctor.doctor_name}'
