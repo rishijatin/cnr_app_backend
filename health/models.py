@@ -15,6 +15,7 @@ class healthCategory(models.Model):
 
 class Doctor(models.Model):
     doctor_name = models.CharField(max_length=50)
+    video_url = models.URLField()
     description = models.TextField()
     doctor_photo = models.URLField()
     experience = models.IntegerField(default=0)
@@ -26,3 +27,6 @@ class Doctor(models.Model):
 
     def __str__(self):
         return f'{self.id} - {self.doctor_name}'
+
+    class Photos(models.Model):
+        doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, related_name='photos')
