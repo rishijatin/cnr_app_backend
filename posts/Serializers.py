@@ -17,5 +17,5 @@ class BlogPostListSerializer(serializers.ModelSerializer):
 class BlogPostDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = BlogPost
-        fields = ['id', 'heading', 'category', 'photo_url_large', 'webpage_url',
+        fields = ['id', 'heading', 'category', 'photo_url_large', 'webpage_url','video_url',
                   'body']

@@ -21,6 +21,7 @@ class BlogPost(models.Model):
     photo_url_small = models.URLField()
     photo_url_large = models.URLField()
     webpage_url = models.URLField()
+    video_url = models.URLField()
     body = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
 

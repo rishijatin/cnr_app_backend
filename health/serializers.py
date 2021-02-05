@@ -25,4 +25,5 @@ class DoctorDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Doctor
-        fields = ['id', 'doctor_photo', 'photos','video_url', 'doctor_name', 'qualification', 'experience', 'description']
+        fields = ['id', 'doctor_photo', 'photos', 'video_url', 'doctor_name', 'qualification', 'experience',
+                  'description']
