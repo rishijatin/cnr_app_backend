@@ -24,4 +24,5 @@ urlpatterns = [
     path('eHealth/', include('health.urls')),
     path('about/', include('AboutPerson.urls')),
     path('contact/', ContactView.as_view()),
+    path('events/', include('event.urls')),
 ]
