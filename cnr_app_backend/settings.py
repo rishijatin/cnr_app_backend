@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'contact',
     'event',
     'vehicle',
+    'employment',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
