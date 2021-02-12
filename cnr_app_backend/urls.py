@@ -25,4 +25,5 @@ urlpatterns = [
     path('about/', include('AboutPerson.urls')),
     path('contact/', ContactView.as_view()),
     path('events/', include('event.urls')),
+    path('eVehicle/',include('vehicle.urls')),
 ]
