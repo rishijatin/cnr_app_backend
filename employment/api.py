@@ -20,7 +20,7 @@ class NewsListView(ListAPIView):
 
     def get_queryset(self):
         category_id = self.kwargs.get(self.lookup_url_kwarg)
-        articles = EmploymentNews.objects.filter(id=category_id)
+        articles = EmploymentNews.objects.filter(category=category_id)
         return articles
 
     def get(self, request, *args, **kwargs):
